@@ -3,7 +3,7 @@ const { Schema } = mongoose;
 
 const userSchema = new Schema({
   googleId: String,
+  credits: { type: Number, default: 0 }
 })
-// by using this mongoose model command we are telling mongoose 
-// that we want to create a new collection called users.
+
 mongoose.model('users', userSchema);
