@@ -6,7 +6,12 @@ import { createStore, applyMiddleware } from "redux";
 import reduxThunk from 'redux-thunk';
 
 import App from "./components/App";
-import reducers from './reducers'
+import reducers from './reducers';
+
+// Development only axios helpers
+import axios from 'axios';
+window.axios = axios;
+// const survey = { title: 'my title', subject: 'Give us Feedback', recipients: 'kuomu.fan@gmail.com', body: 'I hope you enjoy our services'} 
 
 const store = createStore(reducers, {}, applyMiddleware(reduxThunk));
 
@@ -16,5 +21,4 @@ ReactDOM.render(
   </Provider>,
   document.querySelector("#root")
 );
-
 
